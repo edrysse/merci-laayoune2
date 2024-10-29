@@ -1,0 +1,28 @@
+# Ignore node_modules
+node_modules
+
+
+
+# Ignore Laravel cache and logs
+storage/*
+!storage/app/public
+!storage/logs
+!storage/framework/sessions
+!storage/framework/views
+!storage/framework/cache
+!storage/framework/testing
+!storage/framework/tmp
+
+# Ignore compiled files
+public/hot
+public/storage
+public/mix-manifest.json
+
+# Ignore the vendor directory if you're using Composer
+vendor
+
+# Ignore IDE and system files
+.idea
+.vscode
+.DS_Store
+Thumbs.db
