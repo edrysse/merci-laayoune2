@@ -113,7 +113,7 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
 
         <div class="total">
             <span class="t">Total: {{ $total }} DHS</span>
-            <form action="{{ route('checkout') }}" method="GET">
+            <form action="{{ secure_url('checkout') }}" method="GET">
                 <button type="submit" class="btn btn-success">Passer à la caisse</button>
             </form>
         </div>
