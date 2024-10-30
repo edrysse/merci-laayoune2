@@ -76,6 +76,8 @@ Route::resource('commande',commandeController::class);
 Route::resource('comnd',ComndController::class);
 Route::resource('reviews',ReviewController::class);
 Route::resource('checkout',CheckoutController::class);
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+
 
 
 
@@ -90,7 +92,7 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// tests : 
+// tests :
 
 // Route::get('/test', function() {return view('client.validation');});
 // Route::get('/test', [ComndController::class, 'index']);
@@ -111,6 +113,7 @@ Route::post('/cmi/callback', [CheckoutController::class, 'callback'])->withoutMi
 Route::post('/cmi/okUrl', [CheckoutController::class, 'okUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);// dans la trait CmiGateway, cette méthode est vide pour que vous puissiez implémenter votre propre processus après un paiement réussi
 Route::post('/cmi/failUrl', [CheckoutController::class, 'failUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);// la fail url redirigera l'utilisateur vers shopUrl avec une erreur pour que l'utilisateur puisse essayer de payer à nouveau
 Route::get('/url-of-checkout', [CheckoutController::class, 'yourMethod']);// Par exemple, c'est la route où l'utilisateur cliquera sur "Payer maintenant. "( Nous recommandons de l'utiliser comme shopUrl, afin de pouvoir rediriger l'utilisateur en cas d'échec du paiement)
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
 
 
 // Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
