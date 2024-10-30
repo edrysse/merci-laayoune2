@@ -114,6 +114,7 @@ Route::post('/cmi/okUrl', [CheckoutController::class, 'okUrl'])->withoutMiddlewa
 Route::post('/cmi/failUrl', [CheckoutController::class, 'failUrl'])->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);// la fail url redirigera l'utilisateur vers shopUrl avec une erreur pour que l'utilisateur puisse essayer de payer à nouveau
 Route::get('/url-of-checkout', [CheckoutController::class, 'yourMethod']);// Par exemple, c'est la route où l'utilisateur cliquera sur "Payer maintenant. "( Nous recommandons de l'utiliser comme shopUrl, afin de pouvoir rediriger l'utilisateur en cas d'échec du paiement)
 Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::get('/checkout', [CheckoutController::class, 'index']);
 
 
 // Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
