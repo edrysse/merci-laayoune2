@@ -326,8 +326,8 @@ des commentaires ou des réservations spéciales, n'hésitez pas à entrer en co
 
 
 
-    <script src="assets/js/jquery.js"></script>
-         <!-- Modal -->
+    <script src="{{ secure_asset('assets/js/jquery.js') }}"></script>
+    <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="vh-100 d-flex justify-content-center align-items-center">
